@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sign-up</title>
+</head>
+<style>
+	#logo {
+		color: #41e024;
+		font-size: 80px;
+		font-weight: bolder;
+		text-align: center;
+	}
+	
+	#text {
+		text-align: center;
+	}
+	
+	input {
+		display: block;
+		margin: 0 auto;
+	}
+	
+	#submit {
+		display: block;
+		margin: 0 auto;
+	}
+</style>
+<body>
+	<form method="GET" action="http://127.0.0.1:8080/signupOk">
+	<!-- name에 적은 글이 key가 된다 -->
+	<div id="logo">Naver</div><br><br><br>
+	<div id="text">*아이디</div><input class="box" type="text" name="id"><br>
+	<div id="text">*비밀번호</div><input type="text" name="pw"><br>
+	<div id="text">*비밀번호 확인</div><input type="text" name="pw2"><br>
+	<div id="text">*이름</div><input type="text" name="name"><br>
+	<div id="text">연락처</div><input type="text" name="number"><br>
+	<div id="text">이메일</div><input type="text" name="email"><br>
+	<div id="text">* 는 필수입니다.</div><br>
+	<button id="submit">회원가입</button>
+<script>
+	
+// 	function submit() {
+// 		if ( id == null ) {
+// 		alert("아이디를 입력해주세요.");
+// 	}
+// 	if ( pw != pw2 ) {
+// 		alert("비밀번호가 일치하지 않습니다.");
+// 	}
+		
+// }
+	document.querySelector("#submit").onclick = function(){
+	let id = document.querySelector('input[name="id"]').value.trim();
+	let pw = document.querySelector('input[name="pw"]').value;
+	let pw2 = document.querySelector('input[name="pw2"]').value;
+	let name = document.querySelector('input[name="name"]').value.trim();
+		if ( id.length === 0 ) {
+			alert("아이디 입력은 필수입니다.");
+			event.preventDefault();
+		} else if ( pw != pw2 ){
+			alert("비밀번호가 일치하지 않습니다.");
+			event.preventDefault();
+		} else if ( name.length === 0 ) {
+			alert("이름 입력은 필수입니다.");
+			event.preventDefault();
+		}
+		
+	}
+	
+	
+	console.log("id : " + id);
+	
+	
+</script>
+
+</body>
+</html>
